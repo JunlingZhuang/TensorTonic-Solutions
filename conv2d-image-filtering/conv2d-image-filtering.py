@@ -16,7 +16,7 @@ def conv2d(image: list, kernel: list, stride: int = 1, padding: int = 0) -> list
             img_copy = img[i * stride : i * stride + k_H, j * stride : j * stride + k_W]
             output[i, j] = (img_copy * kernel).sum()
 
-    return output.tolist()
+    return output.astype(np.int64).tolist()
             
     
 
